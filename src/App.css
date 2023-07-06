@@ -1,4 +1,7 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(206, 223, 238);
+.grid-rules-app {
+  background-color: '#e2f2ee';
+  display: grid;
+  align-content: space-around;
+  justify-content: space-around;
+  height: '1000px';
 }

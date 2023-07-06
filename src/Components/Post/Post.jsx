@@ -1,49 +1,40 @@
-import React, { useState } from "react";
-import "../PostList/PostList.css";
+import React, {useState, useEffect } from 'react';
+import {ReactComponent as ThumbsDown} from '../../SVG/thumbs-down-solid.svg';
+import {ReactComponent as ThumbsUp} from '../../SVG/thumbs-up-solid.svg';
+import './Post.css';
 
 const Post = (props) => {
-  const [likeButton, setLikeButton] = useState("inactive");
-  const [dislikeButton, setDislikeButton] = useState("inactive");
+    const [thumbsDownColor, setThumbsDownColor] = useState('grey');
+    const [thumbsUpColor, setThumbsUpColor] = useState('grey');
 
-  function handleClickLike() {
-    if (likeButton === "inactive") {
-      setLikeButton("active-like");
-      setDislikeButton("inactive");
-    } else {
-      setLikeButton("inactive");
+    useEffect(() => {
+        
+    }, [props.post]);
+
+    function changeThumbColors(colorNumber){
+
+        if(colorNumber === 1){
+            setThumbsDownColor('grey')
+            setThumbsUpColor('green')
+        } else if (colorNumber === -1){
+            setThumbsDownColor('red')
+            setThumbsUpColor('grey')
+        }else{
+            setThumbsDownColor('grey')
+            setThumbsUpColor('grey')
+        }
     }
-  }
 
-  function handleClickDislike() {
-    if (dislikeButton === "inactive") {
-      setDislikeButton("active-dislike");
-      setLikeButton("inactive");
-    } else {
-      setDislikeButton("inactive");
-    }
-  }
-
-  return (
-    <div className="post">
-      <div className="name">
-        <p>{props.post.name}</p>
-      </div>
-      <div>
-        <p>{props.post.post}</p>
-      </div>
-      <div className="date">
-      <p>{props.post.date}</p>
-    </div>
-    <div className="click">
-        <button type="button" className={likeButton} onClick={handleClickLike}>
-        Like
-        </button>
-        <button type="button" className={dislikeButton} onClick={handleClickDislike}>
-        Dislike
-        </button>
-    </div>
-    </div>
-  );
-};
-
+    return ( 
+        <div>
+            <p style={{'fontWeight': 'bold'}}>{props.post.name}</p>
+            <p>{props.post.body}</p>
+            <span className='icons-span'>
+                <ThumbsUp fill={thumbsUpColor} height='1.5em' style={{'margin-right': '1em'}} onClick={() => changeThumbColors(1)}/>
+                <ThumbsDown fill={thumbsDownColor} height='1.5em' onClick={() => changeThumbColors(-1)}/>
+            </span>
+        </div>
+     );
+}
+ 
 export default Post;

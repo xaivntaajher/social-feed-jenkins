@@ -1,23 +1,26 @@
-import React, { useState } from "react";
-import PostList from "./Components/PostList/PostList";
-import CreatePostForm from "./Components/CreatePostForm/CreatePostForm";
-import NavBar from "./Components/NavBar/NavBar";
-import "./App.css";
+import React, { useState } from 'react';
+import DisplayPosts from './Components/DisplayPosts/DisplayPosts';
+import CreatePost from './Components/CreatePost/CreatePost';
+import Navigation from './Components/Navigation/Navigation';
+import './App.css';
 
 function App() {
-  const [entries, setEntries] = useState([{ name: "Vegeta", post: "His power level is over 10,000!" }]);
+  const [posts, setPosts] = useState([{name: 'David Lagrange', body: `I recently went into the woods to search for the oldest tree I could find. To my luck I 
+  found a very old hemlock around 200 - 250 years old. Let me know if you would like 
+  me to show it to you!`, liked: 0}]);
 
-  function addNewPost(entry) {
-    let tempPost = [...entries, entry];
-
-    setEntries(tempPost);
+  function addNewPost(newPost){
+    let tempPosts = [...posts, newPost];
+    setPosts(tempPosts);
   }
 
   return (
     <div>
-      <NavBar />
-      <CreatePostForm addNewPostProperty={addNewPost} />
-      <PostList parentEntries={entries} />
+      <Navigation />
+      <div className='grid-rules-app' style={{'background-color': '#e2f2ee'}}>
+        <CreatePost addNewPost={addNewPost} />
+        <DisplayPosts posts={posts} />
+      </div>
     </div>
   );
 }
