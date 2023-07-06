@@ -36,7 +36,7 @@ pipeline {
 
                 withCredentials([usernamePassword(credentialsId: 'personal-docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
-                    sh "docker push xaivntaaj/social-feed-jenkins:$BUILD_NAME"
+                    sh "docker push xaivntaaj/social-feed-jenkins:$BUILD_NUMBER"
                 }
 
             }
