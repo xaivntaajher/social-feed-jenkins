@@ -41,6 +41,7 @@ pipeline {
 
         stage('Deploy New Image to AWS EC2') {
             steps {
+                sh 'echo "Deploy"'
 
             }
         }
