@@ -1,0 +1,9 @@
+.header {
+    font-family: 'Segoe UI';
+    border: 1px;
+    border: solid;
+    border-color: gray;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 5px;
+}

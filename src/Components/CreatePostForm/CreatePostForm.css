@@ -1,0 +1,66 @@
+.postform {
+    align-content: center;
+    border: 1px;
+    border-style: solid;
+    border-color: none;
+    border-radius: 5px;
+    width: 600px;
+    height: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+    background-color: white;
+    margin-top: 10px;
+    box-shadow: 1px 1px 2px gray;
+    
+}
+
+.input-label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 40px;
+    height: 50px;
+    margin-right: 120px;
+    font-weight: bold;
+}
+
+.input-post {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 10px;
+    height: 60px;
+}
+
+.button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 10px;
+    height: 50px;
+    margin-top: 60px;
+    margin-left: 150px;
+}
+
+.button-setting{
+    background-color: rgb(80, 140, 196);
+    border: none;
+    width: 75px;
+    height: 20px;
+    color: white;
+}
+
+.input-post-box{
+    width: 350px;
+    height: 50px;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.input-name-box{
+    width: 350px;
+    height: 20px;
+    margin-top: 5px;
+}

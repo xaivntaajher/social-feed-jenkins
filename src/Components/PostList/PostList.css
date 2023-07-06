@@ -1,0 +1,64 @@
+.postlist {
+    display: flex;
+    align-content: center;
+    border: 1px;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 5px;
+    width: 600px;
+    height: auto;
+    margin: auto;
+    background-color: white;
+    margin-top: 10px;
+    box-shadow: 1px 1px 2px gray;
+}
+
+.active-like {
+    background-color: green;
+    color: white;
+}
+.active-dislike {
+    background-color: red;
+    color: white;
+}
+
+.inactive {
+    background-color: white;
+}
+
+.click {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-end;
+    padding: 2px 5px;
+    
+    
+}
+
+.post {
+    padding: 1em;
+    border-bottom: solid gray;
+    margin: 0 auto;
+    display: grid;
+    
+}
+
+.name {
+    font-weight: bold;
+}
+
+.postcontainer{
+    margin: auto;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px gray;
+    width: 600px;
+    margin-top: 10px;
+}
+
+.date {
+    font-size: x-small;
+    color: gray;
+}
