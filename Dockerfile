@@ -1,4 +1,4 @@
-FROM node:alpine3.18 as build
+FROM node:14.20.1-alpine3.15 as build
 WORKDIR /app
 COPY package*.json ./
 RUN npm i
