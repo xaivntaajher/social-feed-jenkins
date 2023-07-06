@@ -23,7 +23,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh """
-                    docker build -t xaivntaaj/react-docker-jenkins:$BUILD_NUMBER .
+                    docker build -t xaivntaaj/social-feed-jenkins:$BUILD_NUMBER .
                     docker images
                 """
             }
@@ -36,7 +36,7 @@ pipeline {
 
                 withCredentials([usernamePassword(credentialsId: 'personal-docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh "docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}"
-                    sh "docker push xaivntaaj/react-docker-jenkins:$BUILD_NAME"
+                    sh "docker push xaivntaaj/social-feed-jenkins:$BUILD_NAME"
                 }
 
             }
